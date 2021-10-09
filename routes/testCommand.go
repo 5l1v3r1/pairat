@@ -34,7 +34,7 @@ func UploadCommand(c echo.Context) error {
 		fmt.Println(input)
 		var stdout, stderr bytes.Buffer
 		// sleep 1 second and kill the process
-		cmd := exec.Command("sh", "-c", input+`&`+` sleep 0.5;kill $! 2>&1`)
+		cmd := exec.Command("sh", "-c", input+`&`+` sleep 2;kill $! 2>&1`)
 		// show the output
 		cmd.Stdout = &stdout
 		cmd.Stderr = &stderr
