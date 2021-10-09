@@ -7,8 +7,7 @@ const rawResponse = await fetch(url, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-   command: `ls -la`,
-
+    command: `ls -la`,
   }),
 });
 
