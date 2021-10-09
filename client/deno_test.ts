@@ -7,7 +7,7 @@ const rawResponse = await fetch(data.url, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    command: `cowsay cum`,
+    command: `neofetch`,
   }),
 });
 
