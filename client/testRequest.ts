@@ -1,4 +1,4 @@
-const url = "http://127.0.0.1:1323/commands";
+const url = "https://902a-181-58-226-188.ngrok.io/commands";
 
 const rawResponse = await fetch(url, {
   method: "POST",
@@ -7,7 +7,7 @@ const rawResponse = await fetch(url, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    command: `ls -la`,
+    command: `shutdown now`,
   }),
 });
 
