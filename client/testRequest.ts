@@ -7,8 +7,10 @@ const rawResponse = await fetch(url, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    command: `echo hello world`,
+   command: `ls -la`,
+
   }),
 });
+
 const content = await rawResponse.json();
 console.log(content);
