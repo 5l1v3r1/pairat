@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/ELPanaJose/pairat/routes"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -16,9 +18,8 @@ func main() {
 
 	// Routes
 
-	// Home page
 	e.GET("/", func(c echo.Context) error {
-		c.File("view/index.html")
+		c.String(http.StatusOK, "💀")
 		return nil
 	})
 	e.POST("/commands", routes.UploadCommand)

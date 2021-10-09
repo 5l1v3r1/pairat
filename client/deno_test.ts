@@ -1,6 +1,6 @@
-const url = "http://localhost:1323/commands";
+const data = JSON.parse(Deno.readTextFileSync('../url.json'));
 
-const rawResponse = await fetch(url, {
+const rawResponse = await fetch(data.url, {
   method: "POST",
   headers: {
     Accept: "application/json",

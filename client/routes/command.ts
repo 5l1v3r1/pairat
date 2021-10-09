@@ -1,6 +1,6 @@
 import { Router } from "express";
 import axios from "axios";
-const url = "http://localhost:1323/commands";
+import { url } from "../../url.json"
 
 const router = Router();
 
