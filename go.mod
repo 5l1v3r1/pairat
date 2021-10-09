@@ -1,4 +1,4 @@
-module github.com/ELPanaJose/rat
+module github.com/ELPanaJose/pairat
 
 go 1.16
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ELPanaJose/rat/routes"
+	"github.com/ELPanaJose/pairat/routes"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
