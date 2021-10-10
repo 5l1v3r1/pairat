@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd client  ; npx tsc --build tsconfig.json; node index.js"
+    "start": "cd src/client  ; npx tsc --build tsconfig.json; node index.js"
   },
   "keywords": [],
   "author": "",

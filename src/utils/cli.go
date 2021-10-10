@@ -11,7 +11,7 @@ import (
 func Cli() {
 	time.Sleep(1 * time.Second)
 	// read/scan the file
-	file, err := os.Open("text.txt")
+	file, err := os.Open("src/utils/text.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

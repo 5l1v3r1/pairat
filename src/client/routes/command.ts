@@ -1,6 +1,6 @@
 import { Router } from "express";
 import axios from "axios";
-import { url } from "../../url.json"
+import { url } from "../../../url.json"
 
 const router = Router();
 
