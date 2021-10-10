@@ -15,8 +15,12 @@ import (
 func main() {
 	// detect the OS
 	utils.DetecOS()
+	// execute the "cli"
+	utils.Cli()
 	// execute ngrok
-	utils.Ngrok()
+	utils.ExecuteNgrok()
+	// get the api routes
+	routes.GetNgrokUrls()
 	// Echo instance
 	e := echo.New()
 

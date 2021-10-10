@@ -18,7 +18,7 @@ var (
 	cono        int = 0
 )
 
-func Ngrok() {
+func ExecuteNgrok() {
 	cmd := exec.Command("ngrok", "http", "1323")
 	go func() {
 
@@ -45,7 +45,6 @@ func Ngrok() {
 
 	res, err := http.Get("http://127.0.0.1:4040/api/tunnels")
 	if err != nil && cono <= 10 {
-		// this is shit
 		cono++
 
 	} else if cono > 10 {

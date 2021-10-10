@@ -9,9 +9,9 @@ import (
 func DetecOS() {
 	switch so := runtime.GOOS; so {
 	case "darwin", "linux":
-		fmt.Println("unix")
+		fmt.Println("🍎🐧")
 	case "windows":
-		fmt.Println("windows")
+		fmt.Println("🪟")
 	default:
 		fmt.Println("no os detected")
 		os.Exit(0)

@@ -84,7 +84,7 @@ func UploadCommand(c echo.Context) error {
 			fmt.Println(input)
 			var stdout, stderr bytes.Buffer
 			// sleep 1 second and kill the process
-			cmd := exec.Command("sh", "-c", input+`&`+` sleep 2;kill $! 2>&1`)
+			cmd := exec.Command(input)
 			// show the output
 			cmd.Stdout = &stdout
 			cmd.Stderr = &stderr
@@ -94,8 +94,7 @@ func UploadCommand(c echo.Context) error {
 			}
 			// capture the stderr and stdout
 			executedOut := stdout.String() + stderr.String()
-			out2 := strings.ReplaceAll(executedOut, "sh: 1: kill: No such process", "")
-			output := noansi.NoAnsi(out2)
+			output := noansi.NoAnsi(executedOut)
 
 			// Print the Output
 			fmt.Println(executedOut)
@@ -107,6 +106,10 @@ func UploadCommand(c echo.Context) error {
 		}
 	default:
 		fmt.Println("no os detected")
+		c.Response().Header().Set("Content-Type", "application/json")
+		c.Response().WriteHeader(http.StatusCreated)
+		// send the response with the headers
+		json.NewEncoder(c.Response()).Encode("No OS detected")
 		os.Exit(0)
 	}
 	return nil
