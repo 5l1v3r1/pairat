@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
 
 	"github.com/ELPanaJose/pairat/routes"
@@ -9,6 +12,7 @@ import (
 )
 
 func main() {
+
 	// Echo instance
 	e := echo.New()
 
@@ -22,6 +26,25 @@ func main() {
 		c.String(http.StatusOK, "💀")
 		return nil
 	})
+
+	resp, err := http.Get("http://ip-api.com/json")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	//We Read the response body on the line below.
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	//Convert the body to type string
+	sb := string(body)
+	fmt.Println(sb)
+	// send the ip info
+	e.GET("/ip", func(c echo.Context) error {
+		c.String(http.StatusOK, sb)
+		return nil
+	})
+
 	e.POST("/commands", routes.UploadCommand)
 
 	// Start server

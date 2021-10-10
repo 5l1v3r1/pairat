@@ -1,3 +1,4 @@
 {
-	"url":"https://cd74-181-58-226-188.ngrok.io/commands"
+	"url":"http://127.0.0.1:1323/commands",
+	"urlip":"http://127.0.0.1:1323/ip"
 }

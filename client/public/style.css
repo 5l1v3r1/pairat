@@ -7,3 +7,15 @@
 body {
   background-color: black;
 }
+h1 {
+  color: aliceblue;
+}
+#ip-info {
+  text-align: left;
+  color: rgb(48, 252, 48);
+  height: 20vw;
+  width: 30vw;
+  background-color: #000;
+  hyphens: none;
+  font-size: 1.5vw;
+}
