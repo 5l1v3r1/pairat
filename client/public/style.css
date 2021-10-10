@@ -19,3 +19,13 @@ h1 {
   hyphens: none;
   font-size: 1.5vw;
 }
+
+#os-info {
+  text-align: left;
+  color: rgb(48, 252, 48);
+  height: 2vw;
+  width: 30vw;
+  background-color:#000;
+  hyphens: none;
+  font-size: 1.5vw;
+}

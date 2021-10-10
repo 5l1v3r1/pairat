@@ -1,4 +1,5 @@
 {
 	"url":"http://127.0.0.1:1323/commands",
-	"urlip":"http://127.0.0.1:1323/ip"
+	"urlip":"http://127.0.0.1:1323/ip",
+    "urlos":"http://127.0.0.1:1323/ip/os"
 }
