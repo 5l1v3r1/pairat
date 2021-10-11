@@ -28,8 +28,8 @@ The web client is shitty, so i recomend yo use the cli: https://github.com/ELPan
 
 <h1>todo</h1>
 
-- terminal client
-- use websockets
-- use it remote without ngrok
+- [x] terminal client
+- [ ] use websockets
+- [ ] use it remote without ngrok
 
 </div>
