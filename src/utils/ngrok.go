@@ -56,6 +56,7 @@ func ExecuteNgrok() {
 		return
 	}
 	url := string(body)
+	fmt.Println("If the remote url doesen't appear go to: http://localhost:4040/inspect/http ")
 	fmt.Printf("\nput this url in the remote client: \033[36m%s\n\n\033[0m", detectNgrok.FindString(url))
 
 }

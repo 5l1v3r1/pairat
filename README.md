@@ -22,7 +22,9 @@ install the client deps with ```npm i```
 
 Then the golang deps ```go get .```
 
-And finnal execute ```go run main.go```
+And finally build the program  ```go build main.go```
+
+And execute it ```./main```
   
 The web client is shitty, so i recomend yo use the cli: https://github.com/ELPanaJose/pairat-cli
 
