@@ -56,6 +56,6 @@ func ExecuteNgrok() {
 		return
 	}
 	url := string(body)
-	fmt.Printf("\nsend: \033[36m%s\n\n\033[0m", detectNgrok.FindString(url))
+	fmt.Printf("\nput this url in the remote client: \033[36m%s\n\n\033[0m", detectNgrok.FindString(url))
 
 }

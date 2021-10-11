@@ -62,5 +62,5 @@ func Cli() {
 		os.Exit(0)
 	}()
 
-	fmt.Println("client on http://127.0.0.1:8000")
+	fmt.Println("local client on http://127.0.0.1:8000")
 }

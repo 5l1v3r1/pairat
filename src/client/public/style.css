@@ -20,6 +20,16 @@ h1 {
   font-size: 1.5vw;
 }
 
+#output {
+  text-align: left;
+  color: rgb(48, 252, 48);
+  height: 20vw;
+  width: 30vw;
+  background-color: #000;
+  hyphens: none;
+  font-size: 1.5vw;
+}
+
 #os-info {
   text-align: left;
   color: rgb(48, 252, 48);

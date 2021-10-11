@@ -4,7 +4,7 @@ import { url } from "../../../url.json";
 
 const router = Router();
 
-router.post("/command-sent", (req: any, res: any) => {
+router.post("/command-sent", async (req: any, res: any) => {
   const { command } = req.body;
   console.log(`input: ${command}`);
 
@@ -16,7 +16,7 @@ router.post("/command-sent", (req: any, res: any) => {
       })
       .then((r) => {
         console.log(`output: ${r.data}`);
-        res.send(r.data);
+        res.json({ out: r.data });
       })
       .catch((err) => (err ? res.send("error") : null));
   });

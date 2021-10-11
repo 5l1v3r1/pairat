@@ -34,11 +34,16 @@
                     autofocus
                   />
                 </div>
-                <button class="btn btn-primary btn-block">Send</button>
+                <script src="sendInfo.js"></script>
+                <button
+                  class="btn btn-primary btn-block"
+                  onclick="sendAndReceive()"
+                >
+                  Send
+                </button>
               </form>
             </div>
           </div>
-          <script src="sendInfo.js"></script>
         </div>
       </div>
     </div>
@@ -47,6 +52,8 @@
       <h1>Connection info</h1>
       <pre id="ip-info" tabindex="0"><code id="ip"></code></pre>
       <pre id="os-info" tabindex="0"><code id="os"></code></pre>
+      <h1>Output terminal</h1>
+      <pre id="output" tabindex="0"><code id="o"></code></pre>
     </div>
 
     <img
