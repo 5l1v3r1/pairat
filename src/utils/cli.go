@@ -5,6 +5,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
+	"os/signal"
+	"syscall"
 	"time"
 )
 
@@ -27,31 +30,37 @@ func Cli() {
 		fmt.Println(scanner.Text())
 
 	}
+
 	/*
-		time.Sleep(2 * time.Second)
-		fmt.Println("compilig client...")
-		time.Sleep(1 * time.Second)
-		cmd := exec.Command("npm", "start")
-		go func() {
 
-			if err := cmd.Run(); err != nil {
-				cmd = exec.Command("npm", "start")
-				if err := cmd.Run(); err != nil {
-					log.Println(err)
-				}
-			}
-		}()
+		This execute the client
 
-		// stop the process when you type ctrl c
-		c := make(chan os.Signal)
-		signal.Notify(c, os.Interrupt, syscall.SIGTERM)
-		go func() {
-			<-c
-			if err := cmd.Process.Kill(); err != nil {
-				log.Println(err.Error())
-			}
-			os.Exit(0)
-		}()
 	*/
+
+	time.Sleep(2 * time.Second)
+	fmt.Println("compilig client...")
+	time.Sleep(1 * time.Second)
+	cmd := exec.Command("npm", "start")
+	go func() {
+
+		if err := cmd.Run(); err != nil {
+			cmd = exec.Command("npm", "start")
+			if err := cmd.Run(); err != nil {
+				log.Println(err)
+			}
+		}
+	}()
+
+	// stop the process when you type ctrl c
+	c := make(chan os.Signal)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-c
+		if err := cmd.Process.Kill(); err != nil {
+			log.Println(err.Error())
+		}
+		os.Exit(0)
+	}()
+
 	fmt.Println("client on http://127.0.0.1:8000")
 }

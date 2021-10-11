@@ -1,24 +1,22 @@
 import { Router } from "express";
 import axios from "axios";
-import { urlip } from "../../../url.json";
+import { url } from "../../../url.json";
 
 const router = Router();
 
-interface CuloUrl {
-  Url: string;
-}
-
 router.get("/ip", (_, res: any) => {
   axios
-    .get(urlip)
+    .get(url)
     .then((r) => {
-      res.json({ out: r.data });
+      let ipUrl = r.data[0]["Urlip"]; // get the ngrok /ip url
+      axios
+        .get(ipUrl)
+        .then((r) => {
+          res.json({ out: r.data }); // send the ip
+        })
+        .catch((err) => (err ? res.send("error") : null));
     })
     .catch((err) => (err ? res.send("error") : null));
-  axios.get("http://127.0.0.1:1323/ngrok").then((r) => {
-    console.log(r.data);
-  });
-  //.catch((err) => (err ? console.log("error") : null));
 });
 
 module.exports = router;
