@@ -33,5 +33,6 @@ The web client is shitty, so i recomend yo use the cli: https://github.com/ELPan
 - [x] terminal client
 - [ ] use websockets
 - [ ] use it remote without ngrok
+- [ ] working in windows
 
 </div>
