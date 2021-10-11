@@ -22,6 +22,8 @@ var (
 func SetUpRoutes() {
 	// detect the OS
 	utils.DetecOS()
+	// kill node and ngrok if is running
+	utils.KillProcess()
 	// execute the "cli"
 	utils.Cli()
 	// execute ngrok
