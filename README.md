@@ -1,10 +1,10 @@
-<div align="center">
+
 
 <h1>⚠️⚠️Disclaimer just use this with good intentions⚠️⚠️</h1>
 
 <h1>An useless rat (remote acces tool in develop)</h1>
 
-<img src="https://mamalinda.tk/pairat.png">
+<img src="https://mamalinda.tk/sisa.png">
 
 <h1>web client</h1>
   
@@ -33,6 +33,6 @@ The web client is shitty, so i recomend yo use the cli: https://github.com/ELPan
 - [x] terminal client
 - [ ] use websockets
 - [ ] use it remote without ngrok
-- [ ] working in windows
+- [ ] working in windows correctly
 
-</div>
+

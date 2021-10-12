@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -10,7 +9,6 @@ import (
 )
 
 func KillProcess() {
-	fmt.Println("tryng to execute the client and ngrok...")
 
 	/*
 

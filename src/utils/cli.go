@@ -12,6 +12,7 @@ import (
 )
 
 func Cli() {
+
 	time.Sleep(1 * time.Second)
 	// read/scan the file
 	file, err := os.Open("src/utils/text.txt")
@@ -37,7 +38,7 @@ func Cli() {
 
 	*/
 
-	time.Sleep(2 * time.Second)
+	time.Sleep(1 * time.Second)
 	fmt.Println("compilig client...")
 	time.Sleep(1 * time.Second)
 	cmd := exec.Command("npm", "start")
@@ -62,5 +63,4 @@ func Cli() {
 		os.Exit(0)
 	}()
 
-	fmt.Println("local client on http://127.0.0.1:8000")
 }

@@ -19,6 +19,12 @@ var (
 )
 
 func ExecuteNgrok() {
+
+	/*
+
+		Here is going execute ngrok
+
+	*/
 	cmd := exec.Command("ngrok", "http", "1323")
 	go func() {
 
@@ -41,7 +47,17 @@ func ExecuteNgrok() {
 		os.Exit(0)
 	}()
 
-	time.Sleep(time.Second * 1) // make the petition
+	/*
+
+		Here this is why was doesen't working
+		only wait 1 second to make the petition,
+		so now wait 3 seconds.
+
+	*/
+	for i := 0; i < 3; i++ {
+		fmt.Println("Searching the ngrok url...")
+		time.Sleep(time.Second * 1)
+	}
 
 	res, err := http.Get("http://127.0.0.1:4040/api/tunnels")
 	if err != nil && cono <= 10 {
@@ -56,7 +72,7 @@ func ExecuteNgrok() {
 		return
 	}
 	url := string(body)
-	fmt.Println("If the remote url doesen't appear go to: http://localhost:4040/inspect/http ")
-	fmt.Printf("\nput this url in the remote client: \033[36m%s\n\n\033[0m", detectNgrok.FindString(url))
+	fmt.Println("Local client on: http://127.0.0.1:8000")
+	fmt.Printf("\nPut this url in the remote cli client: \033[36m%s\n\n\033[0m", detectNgrok.FindString(url))
 
 }

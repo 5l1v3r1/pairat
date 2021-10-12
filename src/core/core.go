@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"os/exec"
 	"regexp"
 	"runtime"
 
@@ -19,9 +21,25 @@ var (
 	DetectNgrok = regexp.MustCompile(`(https:)([/|.|\w|\s|-])*\.(?:io)`) // this is the regex for get the url
 )
 
+func clear() {
+	switch runtime.GOOS {
+	case "linux", "darwin":
+		c := exec.Command("clear")
+		c.Stdout = os.Stdout
+		c.Run()
+	case "windows":
+		c := exec.Command("cls")
+		c.Stdout = os.Stdout
+		c.Run()
+	default:
+		fmt.Println("No OS detected")
+		os.Exit(0)
+	}
+}
+
 func SetUpRoutes() {
-	// detect the OS
-	utils.DetecOS()
+	// clear the terminal
+	clear()
 	// kill node and ngrok if is running
 	utils.KillProcess()
 	// execute the "cli"
