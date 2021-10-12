@@ -10,15 +10,16 @@ import (
 	"runtime"
 	"strings"
 
-	noansi "github.com/ELPanaJose/api-deno-compiler/src/routes/others"
 	"github.com/labstack/echo"
 )
 
-type command struct {
-	Command string
-}
+/*
 
-func UploadCommand(c echo.Context) error {
+In this part is the same as `executeCommand.go`
+but here we don't remove the ansi colors
+
+*/
+func AnsiOn(c echo.Context) error {
 	// detect the OS and send the response
 	switch runtime.GOOS {
 	case "linux", "darwin":
@@ -50,14 +51,13 @@ func UploadCommand(c echo.Context) error {
 			// capture the stderr and stdout
 			executedOut := stdout.String() + stderr.String()
 			out2 := strings.ReplaceAll(executedOut, "sh: 1: kill: No such process", "")
-			output := noansi.NoAnsi(out2)
 
 			// Print the Output
 			fmt.Println(executedOut)
 			c.Response().Header().Set("Content-Type", "application/json")
 			c.Response().WriteHeader(http.StatusCreated)
 			// send the response with the headers
-			json.NewEncoder(c.Response()).Encode(output)
+			json.NewEncoder(c.Response()).Encode(out2)
 
 		}
 		/*
@@ -93,14 +93,13 @@ func UploadCommand(c echo.Context) error {
 			}
 			// capture the stderr and stdout
 			executedOut := stdout.String() + stderr.String()
-			output := noansi.NoAnsi(executedOut)
 
 			// Print the Output
 			fmt.Println(executedOut)
 			c.Response().Header().Set("Content-Type", "application/json")
 			c.Response().WriteHeader(http.StatusCreated)
 			// send the response with the headers
-			json.NewEncoder(c.Response()).Encode(output)
+			json.NewEncoder(c.Response()).Encode(executedOut)
 
 		}
 	default:

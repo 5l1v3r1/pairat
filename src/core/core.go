@@ -53,8 +53,6 @@ func SetUpRoutes() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	// Routes
-
 	resp, err := http.Get("http://ip-api.com/json")
 	if err != nil {
 		log.Fatalln(err)
@@ -124,6 +122,7 @@ func SetUpRoutes() {
 	})
 
 	e.POST("/commands", routes.UploadCommand)
+	e.POST("/commands/ansitrue", routes.AnsiOn)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))
