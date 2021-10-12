@@ -10,11 +10,13 @@
   
 <img src="https://mamalinda.tk/client.png">
 
-you want to use it?
+<h1>you want to use it?</h1>
 
-you need to have installed ngrok, nodejs and golang
+download pairat https://github.com/ELPanaJose/pairat/releases
 
-<h1>Getting started</h1>
+you need to have installed ngrok and nodejs
+
+<h1>Build pairat</h1>
 
 Clone the repo
 
@@ -24,8 +26,6 @@ Then the golang deps ```go get .```
 
 And finally build the program  ```go build main.go```
 
-And execute it ```./main```
-  
 The web client is shitty, so i recomend yo use the cli: https://github.com/ELPanaJose/pairat-cli
 
 <h1>todo</h1>
