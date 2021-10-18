@@ -32,6 +32,7 @@ The web client is shitty, so i recomend yo use the cli: https://github.com/ELPan
 
 - [x] terminal client
 - [ ] use websockets
+- [ ] improve the web client
 - [ ] use it remote without ngrok
 - [x] working in windows correctly
 
