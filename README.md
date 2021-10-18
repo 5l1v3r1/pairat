@@ -14,7 +14,7 @@
 
 download pairat https://github.com/ELPanaJose/pairat/releases
 
-you need to have installed ngrok and nodejs
+you need to have installed ngrok and nodejs (you don't need those on windows)
 
 <h1>Build pairat</h1>
 
@@ -33,6 +33,6 @@ The web client is shitty, so i recomend yo use the cli: https://github.com/ELPan
 - [x] terminal client
 - [ ] use websockets
 - [ ] use it remote without ngrok
-- [ ] working in windows correctly
+- [x] working in windows correctly
 
 

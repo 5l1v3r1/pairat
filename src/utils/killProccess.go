@@ -66,10 +66,9 @@ func KillProcess() {
 			os.Exit(0)
 		}()
 	case "windows":
-		fmt.Println("make sure you have ngrok and node installed and that are not running , https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip, https://nodejs.org/es/download/")
+		fmt.Println("make sure that ngrok is not running")
 	default:
 		fmt.Println("No OS detected")
-		os.Exit(0)
 	}
 
 }

@@ -52,8 +52,6 @@ func AnsiOn(c echo.Context) error {
 			executedOut := stdout.String() + stderr.String()
 			out2 := strings.ReplaceAll(executedOut, "sh: 1: kill: No such process", "")
 
-			// Print the Output
-			fmt.Println(executedOut)
 			c.Response().Header().Set("Content-Type", "application/json")
 			c.Response().WriteHeader(http.StatusCreated)
 			// send the response with the headers
@@ -83,7 +81,7 @@ func AnsiOn(c echo.Context) error {
 			fmt.Println(input)
 			var stdout, stderr bytes.Buffer
 			// sleep 1 second and kill the process
-			cmd := exec.Command(input)
+			cmd := exec.Command(`cmd`, `/C`, input)
 			// show the output
 			cmd.Stdout = &stdout
 			cmd.Stderr = &stderr
@@ -94,8 +92,6 @@ func AnsiOn(c echo.Context) error {
 			// capture the stderr and stdout
 			executedOut := stdout.String() + stderr.String()
 
-			// Print the Output
-			fmt.Println(executedOut)
 			c.Response().Header().Set("Content-Type", "application/json")
 			c.Response().WriteHeader(http.StatusCreated)
 			// send the response with the headers
