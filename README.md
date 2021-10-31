@@ -12,7 +12,7 @@
 
 <h1>you want to use it?</h1>
 
-download pairat https://github.com/ELPanaJose/pairat/releases
+download pairat https://github.com/paij0se/pairat/releases
 
 you need to have installed ngrok and nodejs (you don't need those on windows)
 
