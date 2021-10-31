@@ -26,7 +26,7 @@ Then the golang deps ```go get .```
 
 And finally build the program  ```go build main.go```
 
-The web client is shitty, so i recomend yo use the cli: https://github.com/ELPanaJose/pairat-cli
+The web client is shitty, so i recomend yo use the cli: https://github.com/paij0se/pairat-cli
 
 <h1>todo</h1>
 
