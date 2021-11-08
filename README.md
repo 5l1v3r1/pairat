@@ -4,11 +4,11 @@
 
 <h1>An useless rat (remote acces tool in develop)</h1>
 
-<img src="https://mamalinda.tk/sisa.png">
+<img src="https://mamalinda.tk/monda/sisa.png">
 
 <h1>web client</h1>
   
-<img src="https://mamalinda.tk/client.png">
+<img src="https://mamalinda.tk/monda/client.png">
 
 <h1>you want to use it?</h1>
 
