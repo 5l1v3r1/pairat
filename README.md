@@ -2,31 +2,30 @@
 
 <h1>⚠️⚠️Disclaimer just use this with good intentions⚠️⚠️</h1>
 
-<h1>An useless rat (remote acces tool in develop)</h1>
-
 <img src="https://mamalinda.tk/monda/sisa.png">
 
-<h1>web client</h1>
-  
-<img src="https://mamalinda.tk/monda/client.png">
+<h1>Prerequisites</h1>
 
-<h1>you want to use it?</h1>
+- go 1.16+
+- ngrok 2.3+
 
-download pairat https://github.com/paij0se/pairat/releases
+<h1>Installation</h1>
 
-you need to have installed ngrok and nodejs (you don't need those on windows)
+- download the binary files from: https://github.com/paij0se/pairat/releases
 
-<h1>Build pairat</h1>
+- or download it from curl:
+
+```bash
+curl https://raw.githubusercontent.com/paij0se/pairat/main/install.sh | bash
+```
+
+<h1>Build</h1>
 
 Clone the repo
 
-install the client deps with ```npm i```
+Download the dependencies ```go get .```
 
-Then the golang deps ```go get .```
-
-And finally build the program  ```go build main.go```
-
-The web client is shitty, so i recomend yo use the cli: https://github.com/paij0se/pairat-cli
+build the program  ```go build -o pairat main.go```
 
 <h1>todo</h1>
 

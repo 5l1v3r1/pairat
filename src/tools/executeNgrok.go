@@ -22,11 +22,6 @@ var (
 func ExecuteNgrok() {
 	switch runtime.GOOS {
 	case "linux", "darwin":
-		/*
-
-			Here is going execute ngrok
-
-		*/
 		cmd := exec.Command("ngrok", "http", "1323")
 		go func() {
 
@@ -37,8 +32,6 @@ func ExecuteNgrok() {
 				}
 			}
 		}()
-
-		// stop the process when you type ctrl c
 		c := make(chan os.Signal)
 		signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 		go func() {
@@ -48,14 +41,6 @@ func ExecuteNgrok() {
 			}
 			os.Exit(0)
 		}()
-
-		/*
-
-			Here this is why was doesen't working
-			only wait 1 second to make the petition,
-			so now wait 3 seconds.
-
-		*/
 		for i := 0; i < 3; i++ {
 			fmt.Println("Searching the ngrok url...")
 			time.Sleep(time.Second * 1)
@@ -74,27 +59,19 @@ func ExecuteNgrok() {
 			return
 		}
 		url := string(body)
-		fmt.Println("Local client on: http://127.0.0.1:8000")
 		fmt.Printf("\nPut this url in the remote cli client: \033[36m%s\n\n\033[0m", detectNgrok.FindString(url))
 
 	case "windows":
-		/*
-
-			Execute ngrok on windows
-
-		*/
-		cmd := exec.Command("src/utils/ngrok.exe", "http", "1323")
+		cmd := exec.Command("src/bin/ngrok.exe", "http", "1323")
 		go func() {
 
 			if err := cmd.Run(); err != nil {
-				cmd = exec.Command("src/utils/ngrok.exe", "http", "1323")
+				cmd = exec.Command("src/bin/ngrok.exe", "http", "1323")
 				if err := cmd.Run(); err != nil {
 					log.Println(err)
 				}
 			}
 		}()
-
-		// stop the process when you type ctrl c
 		c := make(chan os.Signal)
 		signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 		go func() {
@@ -104,14 +81,6 @@ func ExecuteNgrok() {
 			}
 			os.Exit(0)
 		}()
-
-		/*
-
-			Here this is why was doesen't working
-			only wait 1 second to make the petition,
-			so now wait 3 seconds.
-
-		*/
 		for i := 0; i < 3; i++ {
 			fmt.Println("Searching the ngrok url...")
 			time.Sleep(time.Second * 1)
@@ -130,7 +99,6 @@ func ExecuteNgrok() {
 			return
 		}
 		url := string(body)
-		fmt.Println("Local client on: http://127.0.0.1:8000")
 		fmt.Printf("\nPut this url in the remote cli client: %s", detectNgrok.FindString(url))
 
 	default:

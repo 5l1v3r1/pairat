@@ -1,7 +1,7 @@
 package main
 
-import "github.com/ELPanaJose/pairat/src/core"
+import server "github.com/ELPanaJose/pairat/src"
 
 func main() {
-	core.SetUpRoutes()
+	server.StartServer()
 }
