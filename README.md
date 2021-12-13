@@ -2,7 +2,13 @@
 
 <h1>⚠️⚠️Disclaimer just use this with good intentions⚠️⚠️</h1>
 
+<h1>Server</h1>
+
 <img src="https://mamalinda.tk/monda/sisa.png">
+
+<h1>https://github.com/paij0se/pairat-cli</h1>
+
+<img src="https://mamalinda.tk/monda/cli.gif">
 
 <h1>Prerequisites</h1>
 
