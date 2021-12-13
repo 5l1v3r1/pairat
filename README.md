@@ -14,6 +14,7 @@
 
 - go 1.16+
 - ngrok 2.3+
+- deno 1.16+
 
 <h1>Installation</h1>
 
