@@ -26,7 +26,7 @@ func UploadCommand(c echo.Context) error {
 		if inputCommand.Command == "" {
 			json.NewEncoder(c.Response()).Encode("Error, Empty Command.")
 		} else {
-			tools.ExecuteCommandWindowsNoAnsi(c, inputCommand.Command)
+			tools.ExecuteCommandUnixNoAnsi(c, inputCommand.Command)
 		}
 
 	case "windows":
